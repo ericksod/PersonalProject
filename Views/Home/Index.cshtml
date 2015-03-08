@@ -1,0 +1,39 @@
+﻿@{ViewBag.Title = "Home Page";}
+
+<h1>This is a stupid Website</h1>
+
+<p>I've got nothing to say.</p>
+
+@using (Html.BeginForm()){
+<p>
+    <label for="FirstName">First Name:</label>
+    @Html.TextBox("FirstName")
+    @Html.ValidationMessage("FirstName", "*")
+</p>
+<p>
+    <label for="LastName">Last Name:</label>
+    @Html.TextBox("LastName")
+    @Html.ValidationMessage("LastName", "*")
+</p>
+<p>
+    <label for="Password">Password:</label>
+    @Html.Password("Password")
+    @Html.ValidationMessage("Password", "*")
+</p>
+<p>
+    <label for="Password">Confirm Password:</label>
+    @Html.Password("ConfirmPassword")
+    @Html.ValidationMessage("ConfirmPassword", "*")
+</p>
+<p>
+    <label for="Profile">Profile:</label>
+    @Html.TextArea("Profile", new {cols=60, rows=10})
+</p>
+<p>
+    @Html.CheckBox("ReceiveNewsletter")
+    <label for="ReceiveNewsletter" style="display:inline">Receive Newsletter?</label>
+</p>
+<p>
+    <input type="submit" value="Register" />
+</p>
+}
